@@ -109,10 +109,10 @@ Les bibliothèques et leurs bornes de version sont définies dans [requirements.
 
 **Les versions**
 ```bash
-uv run python -c "import numpy, pandas, sklearn, matplotlib, seaborn, xgboost, lightgbm, mlflow, sys; print(sys.version.split()[0]); [print(m.__name__, m.__version__) for m in (numpy, pandas, sklearn, matplotlib, seaborn, xgboost, lightgbm, mlflow)]"
+uv run python -c "import numpy, pandas, sklearn, matplotlib, seaborn, xgboost, lightgbm, sys; print(sys.version.split()[0]); [print(m.__name__, m.__version__) for m in (numpy, pandas, sklearn, matplotlib, seaborn, xgboost, lightgbm)]"
 ```
 
-Attendu : Python 3.12.x et neuf lignes sans erreur.
+Attendu : Python 3.12.x et huit lignes sans erreur.
 
 **Que les modèles tournent vraiment**
 ```bash
@@ -129,13 +129,6 @@ print('lightgbm', LGBMClassifier(n_estimators=10, verbose=-1).fit(X, y).score(X,
 Deux scores proches de 1.0 : l'installation est bonne.
 
 Erreur `libomp.dylib` sur macOS : `brew install libomp`.
-
-**MLflow**
-```bash
-uv run mlflow ui --port 5000
-```
-
-Ouvrir http://127.0.0.1:5000, puis `Ctrl+C` pour arrêter. Si le port est pris (AirPlay sur macOS), utiliser `--port 5001`.
 
 ---
 
